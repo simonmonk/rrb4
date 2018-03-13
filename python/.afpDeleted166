@@ -2,6 +2,7 @@
 
 import RPi.GPIO as GPIO
 import time
+from random import randint
 
 class RRB4:
 
@@ -53,9 +54,6 @@ class RRB4:
         GPIO.setup(self.TRIGGER_PIN, GPIO.OUT)
         GPIO.setup(self.ECHO_PIN, GPIO.IN)
         
-        GPIO.setup(self.LED1_PIN, GPIO.OUT)
-        GPIO.setup(self.LED2_PIN, GPIO.OUT)
-        
     def _speed_direction_to_duty(self, speed, direction):
         if direction == 1:
             speed = 1.0 - speed
@@ -85,12 +83,8 @@ class RRB4:
       
     # Deprecated. Kept for compatability with V3 use set_L, set_R
     def set_motors(self, left_pwm, left_dir, right_pwm, right_dir):
-        if left_dir:
-            left_pwm = -left_pwm
-        self.set_L(left_pwm)
-        if right_dir:
-            right_pwm = - right_pwm
-        self.set_R(right_pwm)
+        self.set_L(left_pwm, left_dir)
+        self.set_R(right_pwm, right_dir)
 
 
     def forward(self, seconds=0, speed=1.0):
@@ -180,6 +174,19 @@ class RRB4:
     def cleanup(self):
         GPIO.cleanup()
 
+rrb = RRB4(6,6)
+stop = False
+x = 1
 
+try:
+    while True:
+        rrb.set_R(randint(-1, 1))
+        rrb.set_L(randint(-1, 1))
+        print(x)
+        x += 1
+        time.sleep(1)
+        
+finally:
+    GPIO.cleanup()
     
 
