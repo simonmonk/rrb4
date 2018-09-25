@@ -145,7 +145,7 @@ to send the motors both at half speed in opposite directions is:
 
 ## Stepper Motor Interface
 
-There RRB3 can be used to drive a single bipolar stepper motor with one coil connected to the L motor driver and the other to the R terminals.
+There RRB4 can be used to drive a single bipolar stepper motor with one coil connected to the L motor driver and the other to the R terminals.
 
 Two commands are available to make the motor step in one direction or the other:
 
@@ -158,13 +158,14 @@ rr.set_reverse(5, 200)   # other direction
 
 ## Range Finder
 
-If you fit the RRB3 with an SR-04 ultrasonic rangefinder, then you can use the following call to measure the distance to the enarest obstacle in cm.
+If you fit the RRB4 with an SR-04 ultrasonic rangefinder, then you can use the following call to measure the distance to the enarest obstacle in cm.
 
 `rr.get_distance()`
 
 ## Hardware
 
 You can find the schematic design file in the "design" section of this repo.
+
 
 ## Absolute Maximum Ratings
 Input Voltage: 3-12V (6V recommended when driving motors)
@@ -181,7 +182,7 @@ The I2C socket is pin compatible with these Adafruit displays:
 
 To use these you will need to download Adafruit's Python library for the Pi from [here](http://learn.adafruit.com/matrix-7-segment-led-backpack-with-the-raspberry-pi/overview).
 
-Make sure that you plug the display in the right way around. The socket pins are labelled on the RRB3, make sure they match up with the labels on the display. You can use male to female jumper wires if you wish to put the display further away or its too big.
+Make sure that you plug the display in the right way around. The socket pins are labelled on the RRB4, make sure they match up with the labels on the display. You can use male to female jumper wires if you wish to put the display further away or its too big.
 
 
 
