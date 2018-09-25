@@ -166,6 +166,8 @@ If you fit the RRB4 with an SR-04 ultrasonic rangefinder, then you can use the f
 
 You can find the schematic design file in the "design" section of this repo.
 
+The motor controller used is the LV8548MC and you can see the datasheet here: http://www.onsemi.com/pub/Collateral/LV8548MC-D.PDF
+
 
 ## Absolute Maximum Ratings
 Input Voltage: 3-12V (6V recommended when driving motors)
