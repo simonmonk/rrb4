@@ -1,7 +1,7 @@
-from rrb3 import *
+from rrb4 import *
 import time
 
-rr = RRB3(12.0, 12.0) # battery, motor
+rr = RRB4(12.0, 12.0) # battery, motor
 
 try: 
     while True:
